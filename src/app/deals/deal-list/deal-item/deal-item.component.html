@@ -1,0 +1,21 @@
+<li class="deal">
+  <a href="{{ deal.openGiveawayUrl }}" target="_blank">
+    <img
+      src="{{ deal.thumbnail }}"
+      alt="Thumbnail of {{ deal.title }}"
+      class="deal__image"
+    />
+  </a>
+  <div class="deal__details">
+    <h3 class="deal__title">{{ deal.title }}</h3>
+    <div class="deal__price-box">
+      <div class="deal__new-price">FREE</div>
+      <div class="deal__old-price">{{ deal.worth }}</div>
+    </div>
+    <p class="deal__description">{{ deal.description }}</p>
+  </div>
+  <div class="deal__buttons">
+    <!-- <ion-icon name="heart-outline" class="deal__favorite"></ion-icon> -->
+    <a class="deal__claim" href="{{ deal.url }}">Claim</a>
+  </div>
+</li>

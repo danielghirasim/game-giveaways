@@ -1,0 +1,84 @@
+@import "abstracts/variables";
+
+.deal {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  background-color: $primary-color;
+  color: $color-white;
+  border-radius: $border-radius-default;
+  overflow: hidden;
+  transition: $transition-default;
+  box-shadow: $box-shadow-default;
+
+  &__details,
+  &__buttons {
+    padding: 0 0.8rem;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+  }
+
+  &__price-box {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  &__old-price {
+    font-size: 1.4rem;
+    text-decoration: line-through;
+  }
+
+  &__new-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $color-deal;
+  }
+
+  &__description {
+    font-size: 1.6rem;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__favorite {
+    font-size: 2.4rem;
+    cursor: pointer;
+  }
+
+  &__claim {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    border: 1px solid $color-deal;
+    border-radius: $border-radius-default;
+    padding: 0.4rem 0;
+    color: $color-deal;
+    transition: $transition-default;
+
+    &:hover {
+      background-color: $color-deal;
+      color: $color-white;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &__image,
+  &__title,
+  &__price-box,
+  &__description,
+  &__buttons {
+    margin-bottom: 1.2rem;
+  }
+}
