@@ -10,14 +10,32 @@
   overflow: hidden;
   transition: $transition-default;
   box-shadow: $box-shadow-default;
+  width: 30rem;
 
   &__details,
-  &__buttons {
+  &__buttons,
+  &__claims,
+  &__published {
     padding: 0 0.8rem;
+  }
+
+  &__image,
+  &__title,
+  &__price-box,
+  &__description,
+  &__buttons,
+  &__claims {
+    margin-bottom: 1.2rem;
   }
 
   &__title {
     font-size: 1.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 
   &__price-box {
@@ -39,6 +57,12 @@
 
   &__description {
     font-size: 1.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 
   &__buttons {
@@ -70,15 +94,22 @@
     }
   }
 
-  &:hover {
-    transform: scale(1.02);
+  &__claims {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
 
-  &__image,
-  &__title,
-  &__price-box,
-  &__description,
-  &__buttons {
-    margin-bottom: 1.2rem;
+  &__published {
+    margin-bottom: 0.6rem;
+  }
+
+  &__date {
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: $box-shadow-hover;
   }
 }

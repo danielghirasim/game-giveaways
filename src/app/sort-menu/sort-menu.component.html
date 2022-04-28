@@ -1,0 +1,25 @@
+<div class="sorter">
+  <div class="sorter__dropdown">
+    <app-sort-item
+      labelName="Platform:"
+      name="platform"
+      [selectOptions]="getPlatforms()"
+    ></app-sort-item>
+  </div>
+
+  <div class="sorter__dropdown">
+    <app-sort-item
+      labelName="Giveaway Type:"
+      name="giveaway"
+      [selectOptions]="getTypes()"
+    ></app-sort-item>
+  </div>
+
+  <div class="sorter__dropdown">
+    <app-sort-item
+      labelName="Sort By:"
+      name="sort"
+      [selectOptions]="getSorts()"
+    ></app-sort-item>
+  </div>
+</div>

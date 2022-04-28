@@ -1,14 +1,17 @@
 .container {
-  max-width: 120rem;
+  max-width: 140rem;
   margin: 0 auto;
 }
 
 .grid {
   display: grid;
   row-gap: 3.2rem;
-  column-gap: 1.6rem;
+  column-gap: 2.4rem;
 }
 
+.grid--auto--rows {
+  grid-auto-rows: 1fr;
+}
 .grid:not(:last-child) {
   margin-bottom: 9.6rem;
 }

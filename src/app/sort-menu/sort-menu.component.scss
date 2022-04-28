@@ -1,0 +1,9 @@
+@import "abstracts/variables";
+
+.sorter {
+  background-color: $color-background;
+  padding: 1.2rem 2.4rem;
+  display: flex;
+  gap: 1.8rem;
+  width: 100%;
+}

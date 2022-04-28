@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Deal } from './deal.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DealsService {
+  dealsModified = new Subject<Deal[]>();
+
   deals: Deal[] = [
     {
       id: 795,
@@ -654,8 +657,42 @@ export class DealsService {
         'https://www.gamerpower.com/open/doomtrooper-ccg-card-pack-key-giveaway',
     },
   ];
+  sorts: string[] = ['Relevance', 'Users', 'Published Date'];
+
+  setDeals(deals: Deal[]) {
+    this.deals = deals;
+    this.dealsModified.next([...this.deals])
+  }
 
   getDeals() {
     return [...this.deals];
+  }
+
+  getPlatfroms() {
+    let allPlatforms: string[] = [];
+    this.getDeals().map((deal) => {
+      const platforms = deal.platforms.split(',');
+      if (platforms.length > 1)
+        return platforms.forEach((platform) =>
+          allPlatforms.push(platform.trim())
+        );
+      return allPlatforms.push(deal.platforms);
+    });
+    return [...new Set(allPlatforms)];
+  }
+
+  getTypes() {
+    let allTypes: string[] = [];
+    this.getDeals().map((deal) => {
+      const type = deal.type.split(',');
+      if (type.length > 1)
+        return type.forEach((platform) => allTypes.push(platform.trim()));
+      return allTypes.push(deal.type);
+    });
+    return [...new Set(allTypes)];
+  }
+
+  getSorts() {
+    return [...this.sorts];
   }
 }

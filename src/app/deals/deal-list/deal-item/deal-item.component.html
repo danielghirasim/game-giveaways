@@ -15,7 +15,21 @@
     <p class="deal__description">{{ deal.description }}</p>
   </div>
   <div class="deal__buttons">
-    <!-- <ion-icon name="heart-outline" class="deal__favorite"></ion-icon> -->
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Favorite Icon"
+      class="deal__favorite"
+      >favorite</mat-icon
+    >
     <a class="deal__claim" href="{{ deal.url }}">Claim</a>
+  </div>
+  <div class="deal__claims">
+    <mat-icon class="deal__user">supervised_user_circle</mat-icon
+    >{{ deal.users }} claimed this
+  </div>
+  <div class="deal__published">
+    <p class="deal__date">
+      Published Date: {{ deal.publishedDate | date: "short" }}
+    </p>
   </div>
 </li>
