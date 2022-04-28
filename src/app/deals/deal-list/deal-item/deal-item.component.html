@@ -1,5 +1,5 @@
 <li class="deal">
-  <a href="{{ deal.openGiveawayUrl }}" target="_blank">
+  <a href="{{ deal.open_giveaway_url }}" target="_blank">
     <img
       src="{{ deal.thumbnail }}"
       alt="Thumbnail of {{ deal.title }}"
@@ -21,7 +21,7 @@
       class="deal__favorite"
       >favorite</mat-icon
     >
-    <a class="deal__claim" href="{{ deal.url }}">Claim</a>
+    <a class="deal__claim" href="{{ deal.gamerpower_url }}">Claim</a>
   </div>
   <div class="deal__claims">
     <mat-icon class="deal__user">supervised_user_circle</mat-icon
@@ -29,7 +29,7 @@
   </div>
   <div class="deal__published">
     <p class="deal__date">
-      Published Date: {{ deal.publishedDate | date: "short" }}
+      Published Date: {{ deal.published_date | date: "short" }}
     </p>
   </div>
 </li>

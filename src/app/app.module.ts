@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { SortMenuComponent } from './sort-menu/sort-menu.component';
 import { SortItemComponent } from './sort-menu/sort-item/sort-item.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { SortItemComponent } from './sort-menu/sort-item/sort-item.component';
     SortMenuComponent,
     SortItemComponent,
   ],
-  imports: [BrowserModule, NoopAnimationsModule, MatIconModule, MatMenuModule],
+  imports: [BrowserModule, NoopAnimationsModule, MatIconModule, MatMenuModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
