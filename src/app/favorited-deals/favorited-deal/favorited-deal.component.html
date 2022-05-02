@@ -1,0 +1,23 @@
+<li class="favorite">
+  <a
+    class="favorite__link"
+    href="{{ favorite.open_giveaway_url }}"
+    target="_blank"
+  >
+    <img
+      class="favorite__img"
+      src="{{ favorite.thumbnail }}"
+      alt="thumbnail of {{ favorite.title }}"
+    />
+  </a>
+  <div class="favorite__text-box">
+    <h4 class="favorite__title">{{ favorite.title }}</h4>
+    <p class="favorite__platforms">{{ favorite.platforms }}</p>
+  </div>
+  <mat-icon
+    aria-hidden="false"
+    aria-label="delete icon"
+    class="favorite__delete"
+    >delete</mat-icon
+  >
+</li>

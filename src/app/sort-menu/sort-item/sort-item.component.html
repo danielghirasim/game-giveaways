@@ -2,7 +2,7 @@
   <label class="sort__label" for="{{ name }}">{{ labelName }}</label>
   <select name="{{ name }}" id="{{ name }}" (change)="onChange($event)">
     <option *ngFor="let option of selectOptions" value="{{ option }}">
-      {{ option | titlecase }}
+      {{ option | uppercase }}
     </option>
   </select>
 </div>

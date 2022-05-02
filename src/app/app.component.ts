@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   constructor(private dataStorage: DataStorageService) {}
 
   ngOnInit() {
-    this.dataStorage.fetchRecipes().subscribe();
+    // Enable for API request
+    // this.dataStorage.fetchRecipes().subscribe();
   }
 }

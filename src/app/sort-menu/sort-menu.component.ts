@@ -22,4 +22,5 @@ export class SortMenuComponent implements OnInit {
   getSorts() {
     return this.dealsService.getSorts();
   }
+
 }

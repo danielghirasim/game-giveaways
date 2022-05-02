@@ -28,6 +28,11 @@
     margin-bottom: 1.2rem;
   }
 
+  &__image {
+    width: 30rem;
+    height: 20rem;
+  }
+
   &__title {
     font-size: 1.8rem;
     overflow: hidden;
@@ -63,6 +68,7 @@
     -webkit-line-clamp: 3; /* number of lines to show */
     line-clamp: 3;
     -webkit-box-orient: vertical;
+    height: 6rem;
   }
 
   &__buttons {
@@ -75,6 +81,15 @@
   &__favorite {
     font-size: 2.4rem;
     cursor: pointer;
+    transition: $transition-default;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .favorited {
+    color: $color-deal;
   }
 
   &__claim {
@@ -109,7 +124,8 @@
   }
 
   &:hover {
-    transform: scale(1.02);
+    transform: translateY(-1%);
     box-shadow: $box-shadow-hover;
+    background-color: $primary-color-dark;
   }
 }

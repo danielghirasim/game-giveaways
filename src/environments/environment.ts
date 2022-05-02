@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://www.gamerpower.com/api/giveaways',
+  apiUrl: 'https://gamerpower.p.rapidapi.com/api/giveaways',
 };
 
 /*

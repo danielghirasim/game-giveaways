@@ -1,0 +1,22 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+.favorites {
+  position: relative;
+  @include flex-center;
+  cursor: pointer;
+  gap: 0.8rem;
+  color: $color-white;
+
+  &__text {
+    font-size: 1.8rem;
+  }
+
+  &__list {
+    background-color: $primary-color;
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // transform: translate(0, 19%);
+  }
+}

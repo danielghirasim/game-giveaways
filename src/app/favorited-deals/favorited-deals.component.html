@@ -1,0 +1,20 @@
+<div class="favorites" (click)="onShowFavorites()">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Favorite Icon"
+    class="favorites__icon"
+    >favorite</mat-icon
+  >
+  <span class="favorites__text">Favorites</span>
+</div>
+
+<ul
+  class="favorites__list"
+  *ngIf="isListVisible"
+  [@favoritesList]
+>
+  <app-favorited-deal
+    *ngFor="let favorite of favoritedDeals"
+    [favorite]="favorite"
+  ></app-favorited-deal>
+</ul>

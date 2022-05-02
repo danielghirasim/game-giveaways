@@ -13,11 +13,12 @@ export class SortItemComponent implements OnInit {
 
   constructor(private dealsService: DealsService) {}
 
+
   ngOnInit(): void {}
 
   onChange(event: any) {
     console.log(event.target.value);
   }
 
-
+  
 }

@@ -1,6 +1,8 @@
 @import "abstracts/variables";
 
 .deals {
+  display: flex;
+  justify-content: center;
   background-color: $color-background;
-  padding: 2.4rem;
+  padding: 2.4rem 0;
 }

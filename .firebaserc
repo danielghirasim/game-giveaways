@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "game-giveaways-db4ef": {
+      "hosting": {
+        "game-giveaways": [
+          "game-giveaways-db4ef"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "game-giveaways-db4ef"
+  }
+}

@@ -9,10 +9,15 @@ import { Deal } from '../../deal.model';
 export class DealItemComponent implements OnInit {
   @Input() deal: Deal;
   dealOldPrice: string;
+  isFavorite: boolean = false;
 
   constructor() {}
 
   ngOnInit() {
     this.dealOldPrice = this.deal.worth === 'N/A' ? '' : this.deal.worth;
+  }
+
+  onFavorite() {
+    this.isFavorite = !this.isFavorite;
   }
 }

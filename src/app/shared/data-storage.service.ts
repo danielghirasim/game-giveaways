@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DealsService } from '../deals/deals.service';
 import { environment } from 'src/environments/environment';
-import { map, tap } from 'rxjs';
+import { tap } from 'rxjs';
 import { Deal } from '../deals/deal.model';
 
 @Injectable({
@@ -14,14 +14,20 @@ export class DataStorageService {
   constructor(private http: HttpClient, private dealsService: DealsService) {}
 
   fetchRecipes() {
-    return this.http.get<Deal[]>(this.url).pipe(
-      tap((deals) => {
-        console.log('fetching');
-        console.log(deals);
-        this.dealsService.setDeals(deals);
+
+    return this.http
+      .get<Deal[]>(this.url, {
+        headers: new HttpHeaders({
+          'X-RapidAPI-Host': 'gamerpower.p.rapidapi.com',
+          'X-RapidAPI-Key':
+            'e820e7bf01msh2e99322287fe05ep1a595djsn36cd08181907',
+        }),
       })
-    );
-    // return this.http.get<Deal[]>(this.url);
+      .pipe(
+        tap((deals) => {
+          this.dealsService.setDeals(deals);
+        })
+      );
   }
 
   testFetch() {
