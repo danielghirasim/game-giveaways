@@ -2310,8 +2310,6 @@ export class DealsService {
     },
   ];
 
-  // deals: Deal[] = [];
-
   sorts: string[] = ['Relevance', 'Users', 'Published Date'];
 
   setDeals(deals: Deal[]) {
@@ -2321,7 +2319,24 @@ export class DealsService {
 
   getDeals() {
     return [...this.deals];
-    // this.dealsModified.next([...this.deals])
+  }
+
+  setFavorite(id: number) {
+    const favoriteIndex = this.deals.findIndex((deal) => deal.id === id);
+    const newFavorite = { ...this.deals[favoriteIndex], isFavorite: true };
+    this.deals[favoriteIndex] = newFavorite;
+    this.dealsModified.next([...this.deals]);
+  }
+
+  removeFavorite(id: number) {
+    const favoriteIndex = this.deals.findIndex((deal) => deal.id === id);
+    const newFavorite = { ...this.deals[favoriteIndex], isFavorite: false };
+    this.deals[favoriteIndex] = newFavorite;
+    this.dealsModified.next([...this.deals]);
+  }
+
+  getDeal(id: number): Deal[] {
+    return this.deals.filter((deal) => deal.id === id);
   }
 
   getPlatfroms() {

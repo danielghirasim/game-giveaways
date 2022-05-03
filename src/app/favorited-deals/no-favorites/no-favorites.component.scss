@@ -1,0 +1,14 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+.no-favorites {
+  @include flex-center;
+  list-style: none;
+  width: 35rem;
+  height: 10rem;
+  color: $color-white;
+
+  &__text {
+    font-weight: 700;
+  }
+}

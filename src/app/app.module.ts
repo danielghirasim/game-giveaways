@@ -17,6 +17,9 @@ import { SortItemComponent } from './sort-menu/sort-item/sort-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FavoritedDealsComponent } from './favorited-deals/favorited-deals.component';
 import { FavoritedDealComponent } from './favorited-deals/favorited-deal/favorited-deal.component';
+import { NoFavoritesComponent } from './favorited-deals/no-favorites/no-favorites.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,8 +32,11 @@ import { FavoritedDealComponent } from './favorited-deals/favorited-deal/favorit
     SortItemComponent,
     FavoritedDealsComponent,
     FavoritedDealComponent,
+    NoFavoritesComponent,
+    SearchBarComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     NoopAnimationsModule,
     MatIconModule,

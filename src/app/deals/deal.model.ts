@@ -31,6 +31,7 @@ export class Deal {
     public users: number,
     public status: string,
     public gamerpower_url: string,
-    public open_giveaway: string
+    public open_giveaway: string,
+    public isFavorite?: boolean,
   ) {}
 }

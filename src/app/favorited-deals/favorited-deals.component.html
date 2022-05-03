@@ -1,20 +1,23 @@
-<div class="favorites" (click)="onShowFavorites()">
-  <mat-icon
-    aria-hidden="false"
-    aria-label="Favorite Icon"
-    class="favorites__icon"
-    >favorite</mat-icon
-  >
-  <span class="favorites__text">Favorites</span>
-</div>
+<div class="favorites" [ngClass]="isListVisible ? 'favorites--selected' : ''">
+  <div class="favorites__button" (click)="onShowFavorites()">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Favorite Icon"
+      class="favorites__icon"
+      >favorite</mat-icon
+    >
+    <span class="favorites__text">Favorites</span>
+  </div>
 
-<ul
-  class="favorites__list"
-  *ngIf="isListVisible"
-  [@favoritesList]
->
-  <app-favorited-deal
-    *ngFor="let favorite of favoritedDeals"
-    [favorite]="favorite"
-  ></app-favorited-deal>
-</ul>
+  <ul class="favorites__list" *ngIf="isListVisible" [@enterAnimation]>
+    <div *ngIf="favoritedDeals.length >= 1">
+      <app-favorited-deal
+        *ngFor="let favorite of favoritedDeals"
+        [favorite]="favorite"
+      ></app-favorited-deal>
+    </div>
+    <div *ngIf="favoritedDeals.length === 0">
+      <app-no-favorites></app-no-favorites>
+    </div>
+  </ul>
+</div>

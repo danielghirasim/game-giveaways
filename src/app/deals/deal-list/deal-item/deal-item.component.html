@@ -19,8 +19,8 @@
       aria-hidden="false"
       aria-label="Favorite Icon"
       class="deal__favorite"
-      (click)="onFavorite()"
-      [ngClass]="isFavorite ? 'favorited' : ''"
+      (click)="onFavorite(deal.id)"
+      [ngClass]="deal.isFavorite ? 'favorited' : ''"
       >favorite</mat-icon
     >
     <a class="deal__claim" href="{{ deal.gamerpower_url }}">Claim</a>

@@ -1,0 +1,32 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+.search-bar {
+  @include flex-center;
+  padding: 2rem;
+
+  &__input {
+    width: 40%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-top-left-radius: $border-radius-default;
+    border-bottom-left-radius: $border-radius-default;
+  }
+
+  &__button {
+    font-size: 2rem;
+    outline: none;
+    border: 1px solid $primary-color;
+    border-left: none;
+    padding: 0.8rem;
+    border-top-right-radius: $border-radius-default;
+    border-bottom-right-radius: $border-radius-default;
+    cursor: pointer;
+    transition: $transition-fast;
+
+    &:hover {
+      background-color: $primary-color-dark;
+      color: $color-white;
+    }
+  }
+}

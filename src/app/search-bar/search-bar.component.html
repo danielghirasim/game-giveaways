@@ -1,0 +1,16 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit(searchForm)" #searchForm="ngForm">
+    <div class="search-bar">
+      <label class="search-bar__label" for="search"></label>
+      <input
+        class="search-bar__input"
+        type="text"
+        name="search"
+        id="search"
+        ngModel
+        placeholder="Search for games, loot or DLCs"
+      />
+      <button class="search-bar__button" type="submit" >Search</button>
+    </div>
+  </form>
+</div>

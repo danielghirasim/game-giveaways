@@ -3,20 +3,31 @@
 
 .favorites {
   position: relative;
-  @include flex-center;
-  cursor: pointer;
-  gap: 0.8rem;
-  color: $color-white;
+
+  &__button {
+    @include flex-center;
+    cursor: pointer;
+    gap: 0.8rem;
+    color: $color-white;
+    transition: $transition-default;
+  }
 
   &__text {
     font-size: 1.8rem;
+    font-weight: bold;
   }
 
   &__list {
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color: $primary-color;
-    // position: absolute;
-    // top: 0;
-    // right: 0;
-    // transform: translate(0, 19%);
+    overflow: hidden;
+    transform: translate(20px, 42px);
+  }
+
+  &--selected &__text,
+  &--selected &__icon {
+    color: $color-deal;
   }
 }
